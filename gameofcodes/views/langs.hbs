@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>
+		Your Languages
+	</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link href="./stylesheets/style.css" rel="stylesheet" type="text/css" media="all" />
+
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+</head>
+<body>
+
+<div class="row common-container langs-card-header">
+	<div class="col-lg-6 col-lg-offset-3">
+		<div class="well">
+			<h2 style="font-family: 'Bree Serif', serif;">You seem very much into the following programming languages! Let's search some opportunities ion them ;)</h2>
+		</div>
+	</div>
+</div>
+<div class="confined-space common-container">
+	<div class="conatiner well">
+		<div class="row" >
+		{{#each Langs}}
+			<div class="col-lg-3">
+				<button type="button" class="btn btn-success btn-lg">{{ this }}</button>
+			</div>
+		{{/each}}	
+		</div>
+	</div>
+</div>	
+{{ Langs }}
+
+
+
+
+
+
+</body>
+</html>

@@ -2,12 +2,14 @@ var express = require('express');
 var axios = require('axios');
 var router = express.Router();
 var fs = require('fs');
+
 /* GET home page. */
 
 
 var fileRead = () => {
 	var file = fs.readFileSync('./../prog.js');
-	console.log(file)
+	console.log(JSON.parse(file));
+	return JSON.parse(file);
 };
 
 
@@ -30,12 +32,22 @@ router.post('/', (req,res) => {
 			let uniquelangs = [...new Set(reposlang)];
 			uniquelangs = uniquelangs.filter((data) => data !== null);
 			fs.writeFileSync('./../prog.js', JSON.stringify(uniquelangs));
-			fileRead();
-			res.send(uniquelangs);
+			
+			res.redirect('/yourlangs');
 		})
 		.catch((e) => {
 			console.log(e);
 		})
+
+router.get('/yourlangs', (req,res) => {
+
+	let dynamicLangs = fileRead();
+
+	res.render('langs',{
+		Langs: dynamicLangs
+	});
+
+});		
 	
 	
 });

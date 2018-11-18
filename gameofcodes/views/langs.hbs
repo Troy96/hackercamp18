@@ -17,7 +17,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
 </head>
 <body>
-
+{{#if Langs}}
 <div class="row common-container langs-card-header">
 	<div class="col-lg-6 col-lg-offset-3">
 		<div class="well">
@@ -25,25 +25,28 @@
 		</div>
 	</div>
 </div>
+
 <div class="confined-space common-container">
 	<div class="conatiner well">
 		<div class="row" >
+		
 		{{#each Langs}}
 			<div class="col-lg-3">
 				<a href="/getJobs/{{ this }}"><button type="button" class="btn btn-success btn-lg">{{ this }}</button></a>
 			</div>
 			<br/>
-		{{/each}}	
+		{{/each}}
+		{{else}}
+			<div class="alert alert-danger">
+					Sorry! Wrong Github ID. Please try to login again.
+				<a href="/"><input type="button" class="btn btn-success" value="Go back"></a>
+			</div>
+		
 	
 		</div>
 	</div>
 </div>	
 
-
-
-
-
-
-
+{{/if}}	
 </body>
 </html>

@@ -30,13 +30,15 @@
 		<div class="row" >
 		{{#each Langs}}
 			<div class="col-lg-3">
-				<button type="button" class="btn btn-success btn-lg">{{ this }}</button>
+				<a href="/getJobs/{{ this }}"><button type="button" class="btn btn-success btn-lg">{{ this }}</button></a>
 			</div>
+			<br/>
 		{{/each}}	
+	
 		</div>
 	</div>
 </div>	
-{{ Langs }}
+
 
 
 

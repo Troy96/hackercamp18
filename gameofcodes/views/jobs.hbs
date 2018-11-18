@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>
+		Jobs and Opportunities
+	</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link href="./stylesheets/style.css" rel="stylesheet" type="text/css" media="all" />
+
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+</head>
+<body style="background-color: #76b852">
+
+<div class="row common-container langs-card-header">
+	<div class="col-lg-6 col-lg-offset-3">
+		<div class="well">
+			<h4 style="font-family: 'Bree Serif', serif;">Here is a curated list of jobs and opportunities just for you matching with your interests of programming skills. Wish you all the best! :)</h4>
+		</div>
+	</div>
+</div>
+<div class="confined-space common-container">
+	<div class="container well">
+		<div class="row" >
+		{{#each jobs}}
+			<div class="col-lg-3">
+				
+
+				<div class="card" style="width: 10rem;">
+					{{#if company_logo}}
+  					<img class="card-img-top" src={{company_logo}} alt="Card image cap" width=250px height=250px>
+  					{{else}}
+  					<img class="card-img-top" src="./../images/no_image.png" alt="Card image cap" width=250px height=250px>
+  					{{/if}}
+  					<div class="card-body">
+    					  <h5 class="card-title">{{ title }}</h5>
+   						  <h6 class="card-subtitle mb-2 text-muted">{{ location }}</h6>
+    					<p class="card-text" >{{ type }}</p>
+    					<a href={{ url }}><button type="button" class="btn btn-info btn-lg">Click to Apply for Job</button></a>
+  					</div>
+				</div>
+
+
+			</div>
+		{{/each}}	
+			<br/>
+	
+	
+		</div>
+	</div>
+</div>	
+
+
+
+
+
+
+
+</body>
+</html>{{ description }}
